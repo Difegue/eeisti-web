@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>E-Eisti - Hall of Fame des LANs</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="description" content="Association de la culture vidéoludique et de ses dérivés.">
+		<meta charset="UTF-8"/>
+
+		<!-- Favicons-->
+		<link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
+		<meta name="msapplication-TileColor" content="#3F51B5">
+		<meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+		<link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+		<!--  Android 5 Chrome Color-->
+		<meta name="theme-color" content="#3F51B5">
+		
+		<!-- CSS -->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="css/ee.css"  media="screen,projection"/>
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		
+	</head>
+
+
+
+	<body style="">
+
+		
+
+	<div class="hiddendiv common"></div>
+	<header class="header indigo z-depth-1">
+	<a href="index.html"><img style="" alt="" src="./images/eeisti.png"></a>
+	<h1>Association de la culture vidéoludique et de ses dérivés.</h1>
+
+	
+
+
+	   <nav class="indigo" >
+	    <div class="nav-wrapper">
+	      <a style="position:fixed;left:10px;top:0;background-color: #3F51B5;z-index:500" href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+	      <ul class="right hide-on-med-and-down">
+	        <li><a href="halloffame.html">Hall of Fame</a></li>
+	        <li><a href="serverstats.html">Serveurs</a></li>
+	        <li><a class="modal-trigger" href="#modal1">Contact</a></li>
+	      </ul>
+	      <ul class="side-nav" id="mobile-demo">
+	        <li><a href="halloffame.html">LANs</a></li>
+	        <li><a href="serverstats.html">Serveurs</a></li>
+	        <li><a class="modal-trigger" href="#modal1">Contact</a></li>
+	      </ul>
+	    </div>
+	  </nav>
+          
+        
+
+	</header>
+
+	 <!-- Modal Structure -->
+	  <div id="modal1" class="modal">
+	    <div class="modal-content">
+	      <h4>Contacter l'association</h4>
+	      <center>
+			<p>On vous répondra, éventuellement.</p>
+			<p>
+			EISTI
+			<br>
+			Avenue du Parc
+			<br>
+			Cergy-Pontoise, France
+			<br>
+			<a href="mailto:contact.eeisti@gmail.com">contact.eeisti@gmail.com</a>
+			</p>
+			<div id="mapwrap">
+			
+			</div>
+	       </center>
+	      </div>
+	    <div class="modal-footer">
+	      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Fermer</a>
+	    </div>
+	  </div>
+
+
+
+	<div id="index-banner" class="section fade-in" style="display: block; opacity: 1;">
+	<div class="container">
+
+	<div class="row" id="affiches">
+
+		 
+	<!-- cc affiche issi -->
+        
+	</div>
+
+	</div>
+	</div>
+
+		<footer class="indigo z-depth-1">
+		<div class="container">
+		<div class="row get-in-touch">
+			<div class="col l12 s12">
+			<h5 class="white-text">On est aussi sur les réseaux sociaux</h5>
+			<p class="grey-text text-lighten-4"> Enfin, presque. Y'a que le facebook de vraiment actif.</p>
+			<div class="follow_us">
+			<a target="_blank" href="https://twitter.com/EEISTI">
+			<i class="fa fa-twitter"></i>
+			</a>
+			<a target="_blank" href="https://www.facebook.com/assoc.eeisti">
+			<i class="fa fa-facebook"></i>
+			</a>
+			<a target="_blank" href="https://groups.google.com/d/forum/e-eisti-gp">
+			<i class="fa fa-google"></i>
+			</a>
+			<a target="_blank" href="http://eistiens.net/associations/E-Eisti/">
+			<i>E</i>
+			</a>
+			</div>
+			</div>
+		</div>
+		</div>
+
+		<div class="footer-copyright indigo darken-2">
+		<div class="container">
+		<a href="bomb.html">Oh my god JC, a bomb!</a>
+		</div>
+		</div>
+	</footer>
+	
+
+<div class="drag-target" style="left: 0px;"></div>
+
+<script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="./js/materialize.min.js"></script>
+<script type="text/javascript" src="./lan_liste.js"></script>
+<script>
+$(document).ready(function(){
+	$(".button-collapse").sideNav();
+	$('.modal-trigger').leanModal();
+	//$("#mapwrap").load("<iframe scrolling=\"no\" width=\"100%\" height=\"300\" frameborder=\"0\" src=\"https://www.google.es/maps?t=m&ie=UTF8&ll=49.034689,2.070966&spn=0.004741,0.013078&z=17&output=embed\" marginwidth=\"0\" marginheight=\"0\"></iframe>");
+
+	//On load les affiches
+
+	var index;
+	for (index = 0; index < LANDATA.length; ++index) {
+	    
+	    $("#affiches").append(""
+	    +"<div class=\"col s12 m6 l3\">"
+        + " <div class=\"card medium\">"
+        + "   <div class=\"card-image\">"
+        + "     <img src=\"./lan_affiches/"+LANDATA[index].image+"\" class=\"materialboxed responsive-img\" onclick=\"mBoxFix(this)\">"
+        + "   </div>" 
+        + " <div class=\"card-content\">"
+		+ " <p>"
+		+ " 	<span class=\"card-title grey-text text-darken-4\" style=\"line-height:35px\">"
+		+     	 LANDATA[index].name
+		+ "  	</span>"
+		+ " </p>"
+		+ " LAN du "+LANDATA[index].date
+		+ " </div>"   
+        + "</div>"
+        + "</div>");
+		};
+
+	//on initialise le lightbox pour les images qu'on a ajoutées
+	$('.materialboxed').materialbox();
+	
+	});
+
+ function mBoxFix(image){
+
+        	//si l'image n'est pas active
+        	//alert(image.classList);
+        	if ($.inArray("active", image.classList)==-1)
+        	{
+	        	//change overflow so that image can display
+	        	image.parentElement.parentElement.style.overflow="visible";
+	        	image.parentElement.parentElement.parentElement.style.overflow="visible";
+
+	        	//set events on mbox returns to set the overflow back to normal
+        	 	setTimeout(function(){ 
+        	 						$(document).one( "scroll", function() { 
+        	 							image.parentElement.parentElement.style.overflow="hidden";
+	        							image.parentElement.parentElement.parentElement.style.overflow="hidden";
+        	 						} );
+
+        	 						$(document).on( "keyup", function(e) { 
+        	 							if (e.keyCode === 27)
+        	 							{
+        	 							image.parentElement.parentElement.style.overflow="hidden";
+	        							image.parentElement.parentElement.parentElement.style.overflow="hidden";
+	        							$( this ).off( e );
+	        							}
+        	 						} );
+
+        	 						$("#materialbox-overlay").on( "mousedown", function(e) { 
+        	 							if (e.which==1)
+        	 							{image.parentElement.parentElement.style.overflow="hidden";
+	        							image.parentElement.parentElement.parentElement.style.overflow="hidden";
+	        							$( this ).off( e );}
+
+        	 						} );
+        	 						}, 30);
+	        }
+	        else
+	        {
+	        	image.parentElement.parentElement.style.overflow="hidden";
+	        	image.parentElement.parentElement.parentElement.style.overflow="hidden";
+	        }
+        	
+        }
+
+</script>
+</body>
+</html>
